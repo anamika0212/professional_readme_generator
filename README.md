@@ -17,7 +17,8 @@
   https://github.com/anamika0212/professional_readme_generator
 
   ## Video-Demo
-  ![Professional Readme Generator](demo/Professional_README_generator.mov)
+  [![Professional Readme Generator]](demo/Professional_README_generator.mov) "Professional Readme Generator Video"
+
   
   ## Project Objective
   To create a command-line application that dynamically generates a professional README.md from a user's input using the Inquirer package.  This will allow a project creator to spend more time working on finishing the project and less time creating a good README.
