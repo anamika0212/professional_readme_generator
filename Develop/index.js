@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-//const fs = require('fs');
-//const generateMarkdown = require('./src/generateMarkdown.js')
+const fs = require('fs');
+const generateMarkdown = require('../src/generateMarkdown.js')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -9,7 +9,7 @@ const questions = [
     //Project name
     {
         type: 'input',
-        name: 'title',
+        name: 'Title',
         message: 'What is the title of the project? (Required)',
         validate: titleInput => {
             if (titleInput) {
@@ -23,7 +23,7 @@ const questions = [
     // Description of project
     {
         type: 'input',
-        name: 'description',
+        name: 'Description',
         message: 'Provide a description of the project (Required)',
         validate: descriptionInput => {
             if (descriptionInput) {
@@ -37,7 +37,7 @@ const questions = [
     // Installation Instructions
     {
         type: 'input',
-        name: 'installation',
+        name: 'Installation',
         message: 'How do you install your project? (Required)',
         validate: installationInput => {
             if (installationInput) {
@@ -52,7 +52,7 @@ const questions = [
     // Usage Information
     {
         type: 'input',
-        name: 'usage',
+        name: 'Usage',
         message: 'How do you use this project? (Required)',
         validate: usageInput => {
             if (usageInput) {
@@ -63,10 +63,10 @@ const questions = [
             }
         }
     },
-    // Contribution Guidlines
+    // Contribution Guidelines
     {
         type: 'input',
-        name: 'contribution',
+        name: 'Contribution',
         message: 'How should people contribute to this project? (Required)',
         validate: contributionInput => {
             if (contributionInput) {
@@ -94,7 +94,7 @@ const questions = [
     // License Options
     {
         type: 'checkbox',
-        name: 'licensing',
+        name: 'Licensing',
         message: 'Choose a license for your project (Required)',
         choices: ['Apache', 'MIT', 'Mozilla-Public', 'GNU-General-Public', 'Common-Development-and Distribution', 'None'],
         validate: licensingInput => {
@@ -109,7 +109,7 @@ const questions = [
     // Github Username
     {
         type: 'input',
-        name: 'github',
+        name: 'Github',
         message: 'Enter your GitHub Username (Required)',
         validate: githubInput => {
             if (githubInput) {
@@ -123,16 +123,22 @@ const questions = [
     // Email Address
     {
         type: 'input',
-        name: 'email',
+        name: 'Email',
         message: ' Enter your email address?',
     },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
+    console.log("attempt to write readme")
+    fs.writeFile(fileName,data, (err) => {
     
-}
+        if(err)
+            throw err;
+            console.log('Success! Information tranferred to the README')
+    });
+    
+};
 
 // TODO: Create a function to initialize app
 function init() {
@@ -140,7 +146,7 @@ function init() {
     inquirer.prompt(questions)
     .then(function (userInput) {
         console.log(userInput)
-        
+        writeToFile("./SampleREADME.md", generateMarkdown(JSON.stringify(userInput,null,2)))
     });
 }
 
