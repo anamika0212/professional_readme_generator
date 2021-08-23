@@ -17,11 +17,9 @@
   https://github.com/anamika0212/professional_readme_generator
 
   ## Video-Demo
-  [![Professional Readme Generator]](demo/Professional_README_generator.mov) "Professional Readme Generator Video"
-  
-  <video width="364" height="92" Professional README generator>
-  <source src="demo/Professional_README_generator.mov" type="video/mp4">
-  </video>
+
+  [![Professional Readme Generator]](demo/Prof_readme_gen.webm) "Professional Readme Generator Video"
+
 
   
   ## Project Objective
