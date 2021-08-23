@@ -18,6 +18,10 @@
 
   ## Video-Demo
   [![Professional Readme Generator]](demo/Professional_README_generator.mov) "Professional Readme Generator Video"
+  
+  <video width="364" height="92" Professional README generator>
+  <source src="demo/Professional_README_generator.mov" type="video/mp4">
+  </video>
 
   
   ## Project Objective
